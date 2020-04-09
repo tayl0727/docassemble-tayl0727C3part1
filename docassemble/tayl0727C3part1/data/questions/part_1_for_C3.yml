@@ -1,0 +1,48 @@
+---
+variable name: STperson_info
+use objects: True
+data:
+  - First Name: Stef
+    Last Name: Taylor
+    Age: 20
+    Hobbies: Surfing
+    Do you like pets?: True
+  - First Name: Mike
+    Last Name: Taylor
+    Age: 60
+    Hobbies: Fishing
+    Do you like pets?: True
+  - First Name: Heidi
+    Last Name: Taylor
+    Age: 62
+    Hobbies: Gardening
+    Do you like pets?: True
+---
+mandatory: True
+question: Data Table
+subquestion: |
+  ### Table collating personal information
+  
+  
+  ${STtable}
+  
+  *Please select the continue button to confirm whether each piece of personal information if correct*
+buttons:
+  - Exit: exit
+  - Restart: restart
+  - Continue: continue
+---
+table: STtable
+rows: STperson_info
+columns: 
+  - First Name: |
+      row_item['First Name']
+  - Last Name: |
+      row_item['Last Name']
+  - Age: |
+      row_item['Age']
+  - Hobbies: |
+      row_item['Hobbies']
+  - Do you like pets?: |
+      row_item['Do you like pets?']
+---
